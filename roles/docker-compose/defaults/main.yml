@@ -1,0 +1,1 @@
+docker_keyring_path: '/etc/apt/trusted.gpg.d/docker.gpg'
