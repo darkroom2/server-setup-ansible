@@ -1,0 +1,6 @@
+---
+- name: Setup remote server
+  hosts: all
+  become: false
+  roles:
+    - docker-compose
