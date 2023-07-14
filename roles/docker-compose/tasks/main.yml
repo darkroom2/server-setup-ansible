@@ -3,6 +3,7 @@
   become: true
   ansible.builtin.apt_key:
     url: 'https://download.docker.com/linux/ubuntu/gpg'
+    keyring: '{{ docker_keyring_path }}'
     state: present
 
 - name: Check dpkg architecture
@@ -14,7 +15,7 @@
 - name: Add Docker repository
   become: true
   ansible.builtin.apt_repository:
-    repo: 'deb [arch={{ dpkg_architecture.stdout }}] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
+    repo: 'deb [arch={{ dpkg_architecture.stdout }} signed-by={{ docker_keyring_path }}] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
     state: present
 
 - name: Install Docker

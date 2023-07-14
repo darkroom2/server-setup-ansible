@@ -17,3 +17,7 @@ Each installed/deployed project is defined as a role in `roles/` directory.
 2. Change `hosts` variable in `playbook.yml` file to match your target nodes.
 3. Adjust `roles` variable in `playbook.yml` file to match your roles.
 4. Run `ansible-playbook playbook.yml --ask-become-pass` to run the playbook.
+
+## Debugging
+
+Run `ansible-playbook -i localhost, -c local playbook.yml --ask-become-pass` to run the playbook locally.
