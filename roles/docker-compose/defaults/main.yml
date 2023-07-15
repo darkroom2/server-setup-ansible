@@ -1,1 +1,2 @@
 docker_keyring_path: '/etc/apt/trusted.gpg.d/docker.gpg'
+docker_add_user_to_group: true
