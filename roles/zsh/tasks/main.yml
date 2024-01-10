@@ -1,0 +1,14 @@
+---
+- name: Install prerequisites
+  become: true
+  ansible.builtin.apt:
+    name: '{{ item }}'
+    state: present
+  loop:
+    - git
+    - zsh
+
+- name: Install oh-my-zsh
+    become: true
+    ansible.builtin.git:
+        repo:
